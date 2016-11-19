@@ -13,15 +13,15 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
 		  	.carousel-inner > .item  {
-		    width: 60%;
-		    height: 60%;
-		    margin: auto;
+				width: 60%;
+				height: 60%;
+				margin: auto;
 		  	}
-
 		</style>
-		<script>
-
-		</script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+		<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'/>
+		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 	</head>
 	<body>
 		<div class="container"> <br>
@@ -35,34 +35,27 @@
 		      <li data-target="#myCarousel" data-slide-to="4"></li>
 		      <li data-target="#myCarousel" data-slide-to="5"></li>
 		    </ol>
-
 		    <!-- Wrapper for slides -->
 		    <div class="carousel-inner" role="listbox">
 		      <div class="item active">
 		        <img src="https://i.ytimg.com/vi/XVOuRSJ3D5o/maxresdefault.jpg" alt="Chania">
 		      </div>
-
 		      <div class="item">
 		        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg/402px-Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg" alt="Chania">
 		      </div>
-		    
 		      <div class="item">
 		        <img src="https://www.studiomuseum.org/sites/default/files/imagecache/slideshows/exhibition/thomas_apollo12-web.jpg" alt="Flower">
 		      </div>
-
 		      <div class="item">
 		        <img src="http://www.tate.org.uk/art/images/work/T/T00/T00540_10.jpg" alt="Flower">
 		      </div>
-
 		      <div class="item">
 		        <img src="https://s-media-cache-ak0.pinimg.com/736x/39/bb/28/39bb28a324d7482b1feb5664f34b1244.jpg" alt="Flower">
 		      </div>
-
 		      <div class="item">
 		        <img src="http://www.pablopicasso.org/images/paintings/jacqueline-with-flowers.jpg" alt="Flower">
 		      </div>
 		    </div>
-
 		    <!-- Left and right controls -->
 		    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 		      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -74,7 +67,6 @@
 		    </a>
 		  </div>
 		</div>
-
 		<div class="container">
     		<h2>Button Styles</h2>
   			<button type="button" class="btn btn-default">Default</button>
@@ -85,7 +77,9 @@
   			<button type="button" class="btn btn-danger">Danger</button>
   			<button type="button" class="btn btn-link">Link</button>
 		</div>
-
-
+		<div id="map"></div>
 	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="Class/Art.js"></script>
+	<script src="Scripts/main.js"></script>
 </html>
