@@ -13,7 +13,7 @@ class Art {
 				pagesize = dat.PageSize;
 			}
 		});
-		for(let x = 1; x <= pagesize; x++){
+		for(let x = 1; x <= 5; x++){
 			$.ajax({
 				url: `http://api.thewalters.org/v1/objects?apikey=${this._apikey}&page=${x}`,
 				method: `GET`,
