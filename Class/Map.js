@@ -4,11 +4,9 @@ const defoptions = {
 };
 class Map {
 	constructor(){
-		if(navigator.geolocation){
-			console.log("True");
-		}
 		this.token = 'pk.eyJ1IjoibmFkcmlvMSIsImEiOiJjaXYzOGV0bzcwMHFtMzBubW9pMDVncDZsIn0.hNxCtgzqUNmyEytbE90H-w';
 		L.mapbox.accessToken = this._token;
+		this._markers = [];
 		this._map = L.map('map', {
 			center: [51.505, -0.09],
 			zoom: 13
@@ -32,7 +30,8 @@ class Map {
 	setMarker(latlng, options = defoptions) {
 		let newmarker = L.marker(latlng, options);
 		newmarker.addTo(this._map);
-		console.log("Marked added at: " + latlng);
+		this._markers.push(newmarker);
+		return newmarker;
 	}
 	makeIcon(img) {
 		let newicon = L.icon({

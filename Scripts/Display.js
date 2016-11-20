@@ -18,4 +18,4 @@ const show  = (classifcation) => {
 	
 };
 
-carousel();
+//carousel();

@@ -37,4 +37,18 @@ class Art {
 		});
 		return d;
 	}
+	get geographical() {
+		let dat;
+		const page = Math.ceil(Math.random() * 21);
+			$.ajax({
+				url: `http://api.thewalters.org/v1/geographies?apikey=${this._apikey}&page=${page}&pageSize=1000`,
+				method: 'GET',
+				async: false,
+				success : (data) => {
+					dat = data;
+				}
+			});
+		return dat;
+	}
+	
 }
