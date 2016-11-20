@@ -14,16 +14,23 @@ const setUpButtons = () => {
 const setUpMuseums = () => {
 	const stuart = new Art();
 	const data = stuart.geographical;
-	let lastmarker;
 	for(let d of data.Items){
 		const latlng = [d.LatitudeNumber, d.LongitudeNumber];
-		map.setMarker(latlng);
-		lastmarker = latlng;
+		console.log(d);
+		let marker = new L.marker(latlng).bindPopup("hi");
+		marker.addTo(map._map);
+
 	}
-	map._map.setView(latlng);
 };
 function main(){
 	setUpButtons();
 	setUpMuseums();
 }
 main();
+
+$("#arrow0").on("click", () => show("Painting & Drawing"));
+$("#arrow1").on("click", () => show("Sculpture"));
+$("#arrow2").on("click", () => show("Stained & Painted Glass"));
+$("#arrow3").on("click", () => show("Miniatures"));
+$("#arrow4").on("click", () => show("Precious Stones & Gems"));
+$("#arrow5").on("click", () => show("Pearl, Horn, Coral & Shell"));

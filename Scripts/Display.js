@@ -12,10 +12,23 @@ const carousel = () => {
 	}
 };
 const show  = (classifcation) => {
+	let output = $("#output");
 	const data = art.classification(classifcation);
-	console.log(data);
-	//const chosen = data[getRandom()];
+	output.html("");
+	for(let d in data.Items){
+		d = data.Items[d];
+		console.log(d.PrimaryImage.Small);
+		const newart = new Artwork(d.Period, d.Creator, d.DateText, d.Description, d.DisplayLocation, d.Title, d.PrimaryImage.Small);
+		output.html(output.html() + `Image: <img src=${newart._img}></img><br>
+					 Title: ${newart._title} <br>
+					 Origin: ${newart._origin} <br>
+					 Nationality: ${newart._nationality} <br>
+					 Time Of Creation: ${newart._creation} <br>
+					 Description: ${newart._description}<br>`);
+	}
 	
 };
 
 carousel();
+//
+show("Sculpture");
