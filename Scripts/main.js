@@ -14,11 +14,13 @@ const setUpButtons = () => {
 const setUpMuseums = () => {
 	const stuart = new Art();
 	const data = stuart.geographical;
+	let lastmarker;
 	for(let d of data.Items){
 		const latlng = [d.LatitudeNumber, d.LongitudeNumber];
 		map.setMarker(latlng);
+		lastmarker = latlng;
 	}
-	console.log(map._markers);
+	map._map.setView(latlng);
 };
 function main(){
 	setUpButtons();
