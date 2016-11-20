@@ -14,7 +14,7 @@ const carousel = () => {
 const show  = (classifcation) => {
 	const data = art.classification(classifcation);
 	console.log(data);
-	const chosen = data[getRandom()];
+	//const chosen = data[getRandom()];
 	
 };
 

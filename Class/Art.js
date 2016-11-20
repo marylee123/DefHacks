@@ -26,14 +26,15 @@ class Art {
 		return data;
 	}
 	classification(classif) {
+		let d;
 		$.ajax({
 			url: `http://api.thewalters.org/v1/objects?apikey=${this._apikey}&classification=${classif}`,
 			method: 'GET',
 			async: false,
 			success : (data) => {
-				console.log(data);
-				return data;
+				d = data;
 			}
 		});
+		return d;
 	}
 }
