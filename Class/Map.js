@@ -4,6 +4,9 @@ const defoptions = {
 };
 class Map {
 	constructor(){
+		if(navigator.geolocation){
+			console.log("True");
+		}
 		this.token = 'pk.eyJ1IjoibmFkcmlvMSIsImEiOiJjaXYzOGV0bzcwMHFtMzBubW9pMDVncDZsIn0.hNxCtgzqUNmyEytbE90H-w';
 		L.mapbox.accessToken = this._token;
 		this._map = L.map('map', {
@@ -16,6 +19,12 @@ class Map {
 			id: 'nadrio1.21fic9cl',
 			token: 'pk.eyJ1IjoibmFkcmlvMSIsImEiOiJjaXYzOGV0bzcwMHFtMzBubW9pMDVncDZsIn0.hNxCtgzqUNmyEytbE90H-w'
 		}).addTo(this._map);
+	}
+	get currentlocation() {
+		navigator.geolocation.getCurrentPosition(
+			(position) => {
+				return position;
+		});
 	}
 	setLocation(latlng, zoom) {
 		this._map.setView(latlng, zoom);	
